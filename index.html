@@ -6,13 +6,17 @@
   <title>Emerald Realty | Haroon Sait</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
 <body class="bg-white text-gray-900">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
   <!-- Hero Section -->
-  <section class="bg-green-50 py-20 text-center">
+  <section class="bg-green-50 py-20 text-center" data-aos="fade-down">
     <div class="max-w-3xl mx-auto px-6">
       <img src="/logo.png" alt="Emerald Realty Logo" class="mx-auto mb-4 h-16">
       <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">Haroon Sait</h1>
@@ -22,7 +26,7 @@
   </section>
 
   <!-- About Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-2xl font-semibold mb-6">About Us</h2>
       <p class="text-gray-700 mb-4">Haroon Sait has been a cornerstone of Bangalore's real estate market for over two decades. With an unwavering commitment to integrity and client satisfaction, we've built a reputation that speaks for itself.</p>
@@ -33,7 +37,7 @@
   </section>
 
   <!-- Stats Section -->
-  <section class="bg-green-50 py-16">
+  <section class="bg-green-50 py-16" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div>
         <p class="text-3xl font-bold text-green-700">20+</p>
@@ -55,11 +59,11 @@
   </section>
 
   <!-- Services Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white" data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl font-semibold mb-10 text-center text-green-800">Our Services</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-green-50 p-6 rounded shadow">
+        <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
           <h3 class="text-xl font-bold mb-2">Property Buying</h3>
           <ul class="list-disc list-inside text-gray-700">
             <li>Market Research</li>
@@ -69,7 +73,7 @@
             <li>Trusted Network</li>
           </ul>
         </div>
-        <div class="bg-green-50 p-6 rounded shadow">
+        <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
           <h3 class="text-xl font-bold mb-2">Property Selling</h3>
           <ul class="list-disc list-inside text-gray-700">
             <li>Market Valuation</li>
@@ -82,7 +86,7 @@
   </section>
 
   <!-- Why Choose -->
-  <section class="bg-green-50 py-16 text-center">
+  <section class="bg-green-50 py-16 text-center" data-aos="fade-up">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-2xl font-semibold mb-6">Why choose Haroon Sait?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -103,7 +107,7 @@
   </section>
 
   <!-- Contact CTA -->
-  <section id="contact" class="py-16 bg-white">
+  <section id="contact" class="py-16 bg-white" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h3 class="text-2xl font-semibold text-green-800 mb-6">Ready to work with us?</h3>
       <p class="text-gray-700 mb-6">Let's discuss how we can bring your real estate vision to life with our expertise and dedication.</p>
@@ -116,16 +120,17 @@
         <p class="text-gray-700 mb-1"><strong>Office:</strong> Emerald Crown, 5/6 Milton Street, Cooke Town, Bangalore - 560006</p>
         <p class="text-gray-700"><strong>Working Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM</p>
       </div>
-      <form class="space-y-4">
-        <input type="text" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded" required />
-        <input type="text" placeholder="Phone number" class="w-full p-3 border border-gray-300 rounded" required />
-        <select class="w-full p-3 border border-gray-300 rounded">
+      <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="name" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded" required />
+        <input type="text" name="phone" placeholder="Phone number" class="w-full p-3 border border-gray-300 rounded" required />
+        <select name="service" class="w-full p-3 border border-gray-300 rounded">
           <option>Select a service</option>
           <option>Property Buying</option>
           <option>Property Selling</option>
           <option>Consultation</option>
         </select>
-        <textarea placeholder="Tell us about your requirements..." class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
+        <textarea name="message" placeholder="Tell us about your requirements..." class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
         <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800">Send Message</button>
       </form>
     </div>
