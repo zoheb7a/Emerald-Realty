@@ -40,13 +40,30 @@
 <body class="bg-white text-gray-900">
   <!-- Floating Call Button -->
   <div class="fixed top-4 right-4 z-50">
-  <a href="tel:+919845263277" class="bg-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-800 transition flex items-center space-x-2">
+  <button onclick="toggleCallPopup()" class="bg-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-800 transition flex items-center space-x-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.11 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.1 12.1 0 0 0 .56 2.57 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.51-1.51a2 2 0 0 1 2.11-.45 12.1 12.1 0 0 0 2.57.56A2 2 0 0 1 22 16.92z" />
     </svg>
     <span>Call Us</span>
-  </a>
+  </button>
 </div>
+
+<div id="call-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+  <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+    <h2 class="text-xl font-semibold mb-4">Let's speak on the phone?</h2>
+    <div class="space-y-3">
+      <a href="tel:+919845263277" class="block bg-green-700 text-white py-2 rounded hover:bg-green-800 transition">📞 Call us on +91 9845263277</a>
+      <a href="http://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" class="block bg-green-100 text-green-800 py-2 rounded hover:bg-green-200 transition">💬 Reach us on WhatsApp</a>
+      <button onclick="toggleCallPopup()" class="mt-4 text-sm text-gray-500 hover:underline">Cancel</button>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleCallPopup() {
+    const popup = document.getElementById('call-popup');
+    popup.classList.toggle('hidden');
+  }
+</script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 
@@ -65,10 +82,6 @@
   <!-- About Section -->
   <section class="bg-white py-12" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="max-w-4xl mx-auto px-6 text-center mb-8">
-      <img src="/your-image-placeholder.jpg" alt="Your Image" class="mx-auto rounded-full w-32 h-32 object-cover">
-    </div>
-
       <h2 class="text-2xl font-semibold mb-6 text-green-800">About Us</h2>
       <p class="text-gray-700 mb-4">Emerald Realty was founded by Haroon Sait with a clear vision to to bring integrity, insight, and personalized attention to Bangalore’s real estate landscape. With the motto of transparency and client delight, Emerald Realty is built on a reputation of trust, experience, and results.</p>
       <p class="text-gray-700 mb-4">With over two decades of experience, we have helped hundreds of clients find not just properties, but the right opportunities. Every home has a story, and we’re here to help you write yours.</p>
@@ -82,6 +95,9 @@
 
   </section>
 
+  <div class="max-w-4xl mx-auto px-6 text-center mb-8">
+      <img src="/your-image-placeholder.jpg" alt="Your Image" class="mx-auto rounded-full w-32 h-32 object-cover">
+    </div>
     
  
 
@@ -111,8 +127,10 @@
   <section class="py-16 bg-white" data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-2xl font-semibold mb-10 text-center text-green-800">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
         <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
+  <img src="https://source.unsplash.com/400x200/?apartment,realestate" alt="Property Selling" class="rounded mb-4 w-full h-40 object-cover">
+  <img src="https://source.unsplash.com/400x200/?building,luxury" alt="Property Buying" class="rounded mb-4 w-full h-40 object-cover">
           
           <h3 class="text-xl font-bold mb-6 text-left pl-6">Property Buying</h3>
           <ul class="list-disc list-inside text-left text-gray-700 mx-auto max-w-xs pl-6">
@@ -124,6 +142,7 @@
           </ul>
         </div>
         <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
+  <img src="https://source.unsplash.com/400x200/?apartment,realestate" alt="Property Selling" class="rounded mb-4 w-full h-40 object-cover">
           
           <h3 class="text-xl font-bold mb-6 text-left pl-6">Property Selling</h3>
           <ul class="list-disc list-inside ml-6 text-left text-gray-700 pl-6">
@@ -207,12 +226,20 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
   </a>
 </div>
+  <a href="http://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
+  </a>
+</div>
+  <a href="http://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
+  </a>
+</div>
 
 <!-- Google Maps Embed -->
 
 
 <!-- Footer note -->
-<div class="bg-dark-green-200 text-center text-xs py-2 text-white-600">
+<div class="bg-gray-900 text-center text-xs py-4 text-white mt-8">
   Made with ❤️ in Bangalore, India
 </div>
 
