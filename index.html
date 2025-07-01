@@ -1,262 +1,333 @@
-ok now note this below code as final project
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emerald Realty</title>
+  <title>Emerald Realty | Residential & Commercial Real Estate in India</title>
+  <meta name="description" content="Emerald Realty: Over 20 years of expertise in residential and commercial real estate. Buy, sell, or invest in apartments, villas, plots, and more. Trusted property consultation, RERA registered.">
+  <link rel="canonical" href="https://www.emeraldrealty.in.net/" />
+  <meta property="og:title" content="Emerald Realty | Residential & Commercial Real Estate in India" />
+  <meta property="og:description" content="Expert real estate services: buy, sell, invest in homes, apartments, plots. Transparent dealings, RERA certified. Free consultation." />
+  <meta property="og:url" content="https://www.emeraldrealty.in.net/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emerald Realty | Residential & Commercial Real Estate in India" />
+  <meta name="twitter:description" content="Expert real estate services: buy, sell, invest in homes, apartments, plots. Transparent dealings, RERA certified. Free consultation." />
+  <meta name="twitter:image" content="/logo.png" />
+  <!-- Home emoji favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
-  .animate-fade-in {
-  animation: fadeIn 0.6s ease-in-out;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-</style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">  // Capture UTM params
-  const form = document.querySelector('form');
-  const urlParams = new URLSearchParams(window.location.search);
-  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
-    if (urlParams.get(param)) {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = param;
-      input.value = urlParams.get(param);
-      form.appendChild(input);
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-in-out;
     }
-  });
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .section-bg {
+      background: linear-gradient(90deg, #e6f9f0 0%, #f6fff9 100%);
+    }
+    .cta-gradient {
+      background: linear-gradient(90deg, #17b26a 0%, #239a57 100%);
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Emerald Realty",
+    "image": "https://www.emeraldrealty.in.net/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Emerald Crown, 5/6 Milton Street, Cooke Town",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "postalCode": "560006",
+      "addressCountry": "IN"
+    },
+    "url": "https://www.emeraldrealty.in.net/",
+    "telephone": "+919845263277",
+    "email": "haroon@emeraldrealty.com",
+    "founder": "Haroon Sait",
+    "areaServed": "India",
+    "description": "Residential and commercial property buying, selling, investment consulting, legal documentation, property valuation, and RERA registered agent."
+  }
+  </script>
+  <!-- Google Analytics (replace ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- Capture UTM params into the form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('leadForm');
+      if (!form) return;
+      const urlParams = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+        if (urlParams.get(param)) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = param;
+          input.value = urlParams.get(param);
+          form.appendChild(input);
+        }
+      });
+    });
+  </script>
 </head>
-<body class="bg-white text-gray-900">
+
+<body class="bg-white text-gray-900 antialiased">
   <!-- Floating Call Button -->
   <div class="fixed top-4 right-4 z-50">
-  <button onclick="toggleCallPopup()" class="bg-green-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-800 transition flex items-center space-x-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.11 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.1 12.1 0 0 0 .56 2.57 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.51-1.51a2 2 0 0 1 2.11-.45 12.1 12.1 0 0 0 2.57.56A2 2 0 0 1 22 16.92z" />
-    </svg>
-    <span>Call Us</span>
-  </button>
-</div>
-
-<div id="call-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-  <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
-    <h2 class="text-xl font-semibold mb-4">Click to get started</h2>
-    <div class="space-y-3">
-      <a href="tel:+919845263277" class="block bg-green-700 text-white py-2 rounded hover:bg-green-800 transition">📞 Call us on +91 9845263277</a>
-      <a href="http://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" class="block bg-green-100 text-green-800 py-2 rounded hover:bg-green-200 transition">💬 Call on WhatsApp</a>
-      <button onclick="toggleCallPopup()" class="mt-4 text-sm text-gray-400 hover:underline">Close</button>
+    <button onclick="toggleCallPopup()" aria-label="Call Us" class="cta-gradient text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-800 transition flex items-center space-x-2 focus:outline-none">
+      <!-- Phone SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.11 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72 12.1 12.1 0 0 0 .56 2.57 2 2 0 0 1-.45 2.11L8.09 8.09a16 16 0 0 0 7.32 7.32l1.69-1.13a2 2 0 0 1 2.11-.45 12.1 12.1 0 0 0 2.57.56A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>Call Us</span>
+    </button>
+  </div>
+  <div id="call-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" aria-modal="true" role="dialog">
+    <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+      <h2 class="text-xl font-semibold mb-4">Click to get started</h2>
+      <div class="space-y-3">
+        <a href="tel:+919845263277" class="block cta-gradient text-white py-2 rounded hover:bg-green-800 transition">📞 Call us on +91 9845263277</a>
+        <a href="https://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" rel="noopener" class="block bg-green-100 text-green-800 py-2 rounded hover:bg-green-200 transition">💬 WhatsApp</a>
+        <button onclick="toggleCallPopup()" class="mt-4 text-sm text-gray-400 hover:underline">Close</button>
+      </div>
     </div>
   </div>
-</div>
-<script>
-  function toggleCallPopup() {
-    const popup = document.getElementById('call-popup');
-    popup.classList.toggle('hidden');
-  }
-</script>
+  <script>
+    function toggleCallPopup() {
+      const popup = document.getElementById('call-popup');
+      popup.classList.toggle('hidden');
+    }
+  </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 
-  <!-- Hero Section -->
-  <section class="bg-green-50 py-20 text-center" data-aos="fade-down">
+  <header class="section-bg py-10 text-center border-b border-green-100" data-aos="fade-down">
     <div class="max-w-3xl mx-auto px-6">
-      <img src="/logo.png" alt="Emerald Realty Logo" class="mx-auto mb-6 h-36">
-      <p class="text-lg md:text-xl text-gray-700">Over 20 years of expertise in Bangalore real estate. Your trusted partner for exceptional service and transparent dealings.</p>
-      
-          
-          
-          
+      <img src="/logo.png" alt="Emerald Realty Logo - RERA Registered Real Estate Agent" class="mx-auto mb-6 h-36" loading="lazy">
+      <h1 class="text-3xl md:text-4xl font-bold text-green-900 mb-4">Emerald Realty: Residential & Commercial Property Experts</h1>
+      <p class="text-lg md:text-xl text-gray-700 mb-6">Over 20 years of expertise in <b>residential</b> and <b>commercial real estate</b>. Your trusted partner for <b>property buying</b>, <b>property selling</b>, and <b>investment consultation</b> in India.</p>
+      <a href="#contact" class="inline-block cta-gradient text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-green-800 transition text-lg">Get a Free Consultation</a>
     </div>
-  </section>
+  </header>
 
-  <!-- About Section -->
-  <section class="bg-white py-12" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-2xl font-semibold mb-6 text-green-800">About Us</h2>
-      <div class="max-w-4xl mx-auto px-6 text-center mb-8">
-      <img src="/your-image-placeholder.jpg" alt="Your Image" class="mx-auto rounded-full w-40 h-40 object-contain">
-    </div>
-  
-      <p class="text-gray-700 mb-4">Emerald Realty was founded by Haroon Sait with a clear vision to to bring integrity, insight, and personalized attention to Bangalore’s real estate landscape. With the motto of transparency and client delight, Emerald Realty is built on a reputation of trust, experience, and results.</p>
-      <p class="text-gray-700 mb-4">With over two decades of experience, we have helped hundreds of clients find not just properties, but the right opportunities. Every home has a story, and we’re here to help you write yours.</p>
-      <p class="text-gray-700 mb-4">Driven by a deep passion for real estate and a commitment to ethical practices, we ensure that our clients experience clarity, value, and confidence at every step of the process.</p>
-      <p class="text-gray-700 mb-8">At Emerald Realty, we don’t just sell properties — we build relationships that last a lifetime.</p>
-    </div>
-             <div class="text-center mt-4 mb-2">
-      <a href="#contact" class="inline-block bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition scroll-smooth">Get a Free Consultation</a>
-    </div>
-
-
-  </section>
-
-    
- 
-
-  <!-- Stats Section -->
-  <section class="bg-green-50 py-16" data-aos="fade-up">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-    <div>
-      <p class="text-3xl font-bold text-green-700">>20</p>
-      <p class="text-gray-600">Years Experience</p>
-    </div>
-    <div>
-      <p class="text-3xl font-bold text-green-700">500+</p>
-      <p class="text-gray-600">Transactions</p>
-    </div>
-    <div>
-      <p class="text-3xl font-bold text-green-700">1000+</p>
-      <p class="text-gray-600">Happy Customers</p>
-    </div>
-    <div>
-      <p class="text-3xl font-bold text-green-700">100%</p>
-      <p class="text-gray-600">Satisfaction Guaranteed</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Services Section -->
-  <section class="py-16 bg-white" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl font-semibold mb-10 text-center text-green-800">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
-  <img src="/your-buy.jpg" alt="Property Buying" class="rounded mb-4 mx-auto w-full max-w-sm object-contain">
-          
-          <h3 class="text-xl font-bold mb-6 text-left pl-6">Property Buying</h3>
-          <ul class="list-disc list-inside text-left text-gray-700 mx-auto max-w-xs pl-6">
-            <li>Market Research</li>
-            <li>Property Evaluation</li>
-            <li>Negotiation Support</li>
-            <li>Legal Documentation</li>
-            <li>Best Price Assured</li>
-          </ul>
+  <main>
+    <!-- About Section -->
+    <section class="bg-white py-12" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-green-800">About Emerald Realty</h2>
+        <div class="flex justify-center mb-8">
+          <img src="/your-image-placeholder.jpg" alt="Haroon Sait, Real Estate Consultant" class="mx-auto rounded-full w-40 h-40 object-contain border-4 border-green-100" loading="lazy">
         </div>
-        <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
-  <img src="/your-sell.jpg" alt="Property Selling" class="rounded mb-4 mx-auto w-full max-w-sm object-contain">
-          
-          <h3 class="text-xl font-bold mb-6 text-left pl-6">Property Selling</h3>
-          <ul class="list-disc list-inside ml-6 text-left text-gray-700 pl-6">
-            <li>Market Valuation</li>
-            <li>Professional Marketing</li>
-            <li>Transaction Management</li>
-            <li>Trusted Network</li>
-            <li>Registration and Assured Service</li>
-          </ul>
+        <p class="text-gray-700 mb-4">
+          Emerald Realty was founded by <b>Haroon Sait</b> to bring <b>integrity</b>, <b>insight</b>, and personalized service to India’s <b>real estate market</b>. With over two decades of experience, we have helped hundreds of clients find their dream <b>apartment</b>, <b>villa</b>, or <b>plot</b>.
+        </p>
+        <p class="text-gray-700 mb-4">
+          We specialize in <b>property buying</b>, <b>property selling</b>, legal documentation, and <b>investment consultation</b> for both <b>residential</b> and <b>commercial properties</b>. Our RERA-registered experts ensure clarity, value, and confidence at every step.
+        </p>
+        <p class="text-gray-700 mb-8">
+          At Emerald Realty, we don’t just sell properties — we build relationships that last a lifetime.
+        </p>
+        <div class="text-center mt-4 mb-2">
+          <a href="#contact" class="inline-block cta-gradient text-white px-6 py-3 rounded-full shadow hover:bg-green-800 transition">Get a Free Consultation</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Why Choose -->
-  
+    <!-- Stats Section -->
+    <section class="section-bg py-16" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-bold text-green-700">20+</p>
+          <p class="text-gray-600">Years in Real Estate</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-700">500+</p>
+          <p class="text-gray-600">Successful Transactions</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-700">1000+</p>
+          <p class="text-gray-600">Happy Clients</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-700">100%</p>
+          <p class="text-gray-600">Satisfaction Rate</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact CTA -->
-  <section id="contact" class="py-16 bg-white" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-2xl font-semibold text-green-800 mb-6">Why choose us</h3>
-<p class="text-gray-700 mb-6">At Emerald Realty, our legacy is rooted in trust, professionalism, and a commitment to guiding clients through their most important property decisions. Let's discuss how we can make your real estate dreams a reality!</p>
-    </div>
-    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-<form action="https://formsubmit.co/zohebarif@gmail.com" method="POST" class="space-y-4" onsubmit="showThankYou()">
-        <input type="hidden" name="_next" value="https://www.emeraldrealty.in.net">
-        <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-        <input type="text" name="name" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded" required />
-        <input type="email" name="email" placeholder="Email address" class="w-full p-3 border border-gray-300 rounded" required />
-        <input type="text" name="phone" placeholder="Phone number" class="w-full p-3 border border-gray-300 rounded" required />
-        <select name="service" class="w-full p-3 border border-gray-300 rounded">
-          <option>Select a service</option>
-          <option>Property Buying</option>
-          <option>Property Selling</option>
-          <option>Consultation</option>
-        </select>
-        <textarea name="message" placeholder="Tell us about your requirements..." class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
-        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800">Send Message</button>
-      </form>
-<div class="pt-6">
-  <h4 class="text-lg font-semibold text-gray-800 mb-2">Contact Information</h4>
-  <p class="text-gray-700 mb-1"><strong>Address:</strong> Emerald Crown, 5/6 Milton Street, Cooke Town, Bangalore - 560006</p>
-<br>
-<p class="text-gray-700 underline">Office timings:</p>
-<p class="text-gray-700">Mon - Sun: 9:00AM - 7:00PM</p>
-  <p class="text-gray-700 mb-1"><strong>Phone:</strong> +91 9845263277</p>
-  <p class="text-gray-700 mb-1"><strong>Email:</strong> haroon@emeraldrealty.com</p>
-</div>
-</div>
-  </section>
+    <!-- Services Section -->
+    <section class="py-16 bg-white" data-aos="fade-up">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-10 text-center text-green-800">Our Core Services</h2>
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
+            <img src="/your-buy.jpg" alt="Residential & Commercial Property Buying" class="rounded mb-4 mx-auto w-full max-w-sm object-contain icon" loading="lazy">
+            <h3 class="text-xl font-bold mb-4 text-left pl-6">Property Buying</h3>
+            <ul class="list-disc list-inside text-left text-gray-700 mx-auto max-w-xs pl-6">
+              <li>Market Research & Site Visits</li>
+              <li>Property Evaluation & Valuation</li>
+              <li>Negotiation Support & Best Price</li>
+              <li>Legal Documentation (RERA, Registration)</li>
+              <li>Home Loan & Investment Advice</li>
+            </ul>
+          </div>
+          <div class="bg-green-50 p-6 rounded shadow transition-transform duration-300 hover:scale-105">
+            <img src="/your-sell.jpg" alt="Property Selling & Listing" class="rounded mb-4 mx-auto w-full max-w-sm object-contain icon" loading="lazy">
+            <h3 class="text-xl font-bold mb-4 text-left pl-6">Property Selling</h3>
+            <ul class="list-disc list-inside text-left text-gray-700 mx-auto max-w-xs pl-6">
+              <li>Property Valuation</li>
+              <li>Professional Marketing & Listing</li>
+              <li>Transaction Management</li>
+              <li>Trusted Buyer Network</li>
+              <li>Legal Support & Registration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-bg py-16" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h3 class="text-2xl font-semibold text-green-800 mb-6">Why Choose Emerald Realty?</h3>
+        <p class="text-gray-700 mb-6">
+          Our legacy is rooted in trust, professionalism, and a commitment to guiding clients through their most important <b>property transactions</b>. 
+          We offer <b>expert guidance</b> on <b>residential</b> and <b>commercial real estate</b>, including <b>apartments</b>, <b>villas</b>, <b>plots</b>, and <b>commercial spaces</b>.
+          <br>
+          <b>Transparent dealings, RERA certified, ethical practices.</b>
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & CTA -->
+    <section id="contact" class="py-16 bg-white" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+        <form id="leadForm" class="space-y-4" autocomplete="off">
+          <input type="text" name="name" placeholder="Your name" class="w-full p-3 border border-gray-300 rounded" required aria-label="Name">
+          <input type="email" name="email" placeholder="Email address" class="w-full p-3 border border-gray-300 rounded" required aria-label="Email">
+          <input type="text" name="phone" placeholder="Phone number" class="w-full p-3 border border-gray-300 rounded" required aria-label="Phone">
+          <select name="service" class="w-full p-3 border border-gray-300 rounded" aria-label="Service">
+            <option>Select a service</option>
+            <option>Property Buying</option>
+            <option>Property Selling</option>
+            <option>Consultation</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your requirements..." class="w-full p-3 border border-gray-300 rounded h-24" required aria-label="Message"></textarea>
+          <button type="submit" class="cta-gradient text-white px-6 py-3 rounded hover:bg-green-800">Send Message</button>
+        </form>
+        <div class="pt-6 md:pt-0">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">Contact Information</h4>
+          <p class="text-gray-700 mb-1"><strong>Address:</strong> Emerald Crown, 5/6 Milton Street, Cooke Town, Bangalore - 560006</p>
+          <br>
+          <p class="text-gray-700 underline">Office timings:</p>
+          <p class="text-gray-700">Mon - Sun: 9:00AM - 7:00PM</p>
+          <p class="text-gray-700 mb-1"><strong>Phone:</strong> +91 9845263277</p>
+          <p class="text-gray-700 mb-1"><strong>Email:</strong> haroon@emeraldrealty.com</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Thank You Modal -->
+  <div id="thankyou-message" class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center text-center p-6 hidden animate-fade-in">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">Thank you!</h2>
+    <p class="text-gray-700">Your message has been captured. Tap below to send details to Emerald Realty.</p>
+    <button id="sendGmailBtn" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 mt-4">Send to Emerald Realty</button>
+  </div>
+  <script>
+    // Form submission handler
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Collect form data
+      const form = e.target;
+      window.leadData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service: form.service.value,
+        message: form.message.value
+      };
+      document.getElementById('thankyou-message').classList.remove('hidden');
+    });
+
+    // Gmail compose handler
+    document.getElementById('sendGmailBtn').addEventListener('click', function() {
+      if (!window.leadData) return;
+      const subject = encodeURIComponent('New Emerald Realty Lead: ' + window.leadData.service);
+      const body = encodeURIComponent(
+        `Name: ${window.leadData.name}\nEmail: ${window.leadData.email}\nPhone: ${window.leadData.phone}\nService: ${window.leadData.service}\nMessage: ${window.leadData.message}`
+      );
+      // Open Gmail compose with data
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=zohebarif@gmail.com&su=${subject}&body=${body}`, '_blank');
+      document.getElementById('thankyou-message').classList.add('hidden');
+      document.getElementById('leadForm').reset();
+    });
+  </script>
+
+  <!-- WhatsApp Floating CTA -->
+  <div id="whatsapp-float" class="fixed bottom-5 right-5 z-50 flex items-center space-x-2 hidden" aria-label="WhatsApp Contact">
+    <div class="bg-white text-green-700 text-xs font-medium px-3 py-1 rounded-full shadow-md">We are available on WhatsApp</div>
+    <a href="https://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" rel="noopener" class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
+    </a>
+  </div>
+  <script>
+    const whatsappFloat = document.getElementById('whatsapp-float');
+    const observerWhatsApp = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          whatsappFloat.classList.remove('hidden');
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection && whatsappFloat) {
+        observerWhatsApp.observe(contactSection);
+      }
+    });
+  </script>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600">
-    <img src="/logo.png" alt="Emerald Realty Logo" class="mx-auto h-10 mb-2">
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600 border-t border-green-100">
+    <img src="/logo.png" alt="Emerald Realty Logo" class="mx-auto h-10 mb-2" loading="lazy">
     <p class="text-lg font-semibold mb-2">EMERALD REALTY</p>
-    <p class="mb-4">Your trusted partner in Bangalore real estate with over 20 years of experience in delivering exceptional service and transparent dealings.</p>
+    <p class="mb-4">Your trusted partner in <b>residential</b> and <b>commercial real estate</b> with over 20 years of experience delivering exceptional service and transparent dealings.</p>
     <p><strong>Haroon Sait</strong> | Managing Director</p>
     <p>Phone: +91 9845263277 | Email: haroon@emeraldrealty.com</p>
     <p>Office: Emerald Crown, 5/6 Milton Street, Cooke Town, Bangalore - 560006</p>
+    <div class="flex justify-center space-x-4 mt-4">
+      <a href="https://wa.me/919845263277" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
+      </a>
+    </div>
     <p class="mt-4">&copy; 2024 Emerald Realty. All rights reserved.</p>
   </footer>
-<div id="thankyou-message" class="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center text-center p-6 hidden animate-fade-in">
-  <h2 class="text-2xl font-bold text-green-700 mb-4">Thank you!</h2>
-  <p class="text-gray-700">Your message has been sent successfully. We will get back to you shortly.</p>
-</div>
-
-<script>
-  function showThankYou() {
-    document.getElementById('thankyou-message').classList.remove('hidden');
-    setTimeout(function() {
-      window.location.href = 'https://www.emeraldrealty.in.net';
-    }, 2500);
-  }
-</script>
-<!-- WhatsApp Floating CTA -->
-<!-- WhatsApp Floating CTA -->
-<div id="whatsapp-float" class="fixed bottom-5 right-5 z-50 flex items-center space-x-2 hidden">
-  <div class="bg-white text-green-700 text-xs font-medium px-3 py-1 rounded-full shadow-md">We are available on WhatsApp</div>
-  <a href="http://wa.me/919845263277?text=Hello%20Mr.%20Haroon,%20I%20am%20looking%20to%20buy/sell%20my%20property" target="_blank" class="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="h-6 w-6">
-  </a>
-</div>
-
-<!-- Google Maps Embed -->
-
-
-<!-- Footer note -->
-<div class="bg-dark-green-500 text-center text-xs py-4 text-black mt-8">
-  Made with ❤️ in Bangalore, India
-</div>
-
-
-<script>
-  const whatsappFloat = document.getElementById('whatsapp-float');
-  const observerWhatsApp = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        whatsappFloat.classList.remove('hidden');
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection && whatsappFloat) {
-      observerWhatsApp.observe(contactSection);
-    }
-  });
-</script>
+  <!-- Footer note -->
+  <div class="bg-green-50 text-center text-xs py-4 text-black mt-8">
+    Made with ❤️ in India
+  </div>
 </body>
 </html>
-
-what else would you suggest to improve
